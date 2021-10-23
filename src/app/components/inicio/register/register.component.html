@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="register-card">
+        <div class="register-title">
+            <h3>Register</h3>
+        </div>
+        <div class="register-form">
+            <form [formGroup]="register" (ngSubmit)=registerUser()>
+                <div class="inputs">
+                    <input class="input-form" type="text" placeholder="Username" formControlName="user">
+                    <span class="register-error"
+                        *ngIf="register.get('user').hasError('required') && register.get('user').touched">User is
+                        required</span>
+                    <span class="register-error"
+                        *ngIf="register.get('user').hasError('minlength') && register.get('user').touched">The user must
+                        have a minimum of 5 characters</span>
+                    <input class="input-form" type="email" placeholder="Email" formControlName="email">
+                    <span class="register-error"
+                        *ngIf="register.get('email').hasError('required') && register.get('email').touched">Email is
+                        required</span>
+                    <span class="register-error"
+                        *ngIf="register.get('email').hasError('email') && register.get('email').touched">Email is
+                        invalid</span>
+                    <input class="input-form" type="password" placeholder="Password" formControlName="password">
+                    <span class="register-error"
+                        *ngIf="register.get('password').hasError('required') && register.get('password').touched">Password
+                        is
+                        required</span>
+                    <span class="register-error"
+                        *ngIf="register.get('password').hasError('minlength') && register.get('password').touched">The
+                        password must
+                        have a minimum of 6 characters</span>
+                    <input class="input-form" type="password" placeholder="Repeat the password"
+                        formControlName="confirmPassword">
+
+                    <span class="register-error"
+                        *ngIf="register.hasError('notSame')  && register.get('confirmPassword').touched">The
+                        passwords are not the same</span>
+                </div>
+                <div>
+                    <button class="button-form" routerLink="/welcome/login">Accept</button>
+                    <button class="button-form" routerLink="/welcome/login">Back</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.title-app{
+    font-family: 'Fredoka One';
+    font-size: 8rem;
+    color: #707070;
+}
+.button{
+    width: 8rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #E0E0E0;
+    color: #3B3B3B;
+    margin: 0 .75rem 0 .75rem;
+}
+.button:hover{
+    background-color: #707070;
+    color: white;
+    transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.25s;
+}

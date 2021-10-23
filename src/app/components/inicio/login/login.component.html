@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="login-card">
+        <div class="login-title">
+            <h3>Login</h3>
+            <app-loading *ngIf="loading"></app-loading>
+        </div>
+        <div class="login-form">
+            <form [formGroup]="login" (ngSubmit)=log() >
+                <div class="inputs">
+                    <input class="input-form" type="text" placeholder="Username" formControlName="user">
+                    <span class="login-error"
+                        *ngIf="login.get('user').hasError('required') && login.get('user').touched">User is
+                        required</span>
+                    <input class="input-form" type="password" placeholder="Password" formControlName="password">
+                    <span class="login-error"
+                        *ngIf="login.get('password').hasError('required') && login.get('password').touched">Password is
+                        required</span>
+                    <span class="login-error"></span>
+                </div>
+                <div>
+                    <button class="button-form" type="submit" [disabled]="login.invalid" >Accept</button>
+                    <button class="button-form" routerLink="/welcome">Back</button>
+                </div>
+                <div>
+                    <a class="a-form" routerLink="/welcome/register">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
