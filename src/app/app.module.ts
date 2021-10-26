@@ -17,6 +17,7 @@ import { ChangepasswordComponent } from './components/dashboard/changepassword/c
 import { QuestionnaireComponent } from './components/dashboard/questionnaire/questionnaire.component';
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoadingComponent } from './shared/loading/loading.component';
     ChangepasswordComponent,
     QuestionnaireComponent,
     NavbarComponent,
-    LoadingComponent
+    LoadingComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

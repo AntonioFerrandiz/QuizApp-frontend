@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     const user: User = {
       userName: this.login.value.user,
       password: this.login.value.password,
-      userEmail: ''
+      // userEmail: ''
     }
     this.loading = true;
     setTimeout(()=>{

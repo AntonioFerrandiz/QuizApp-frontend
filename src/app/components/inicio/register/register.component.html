@@ -2,6 +2,7 @@
     <div class="register-card">
         <div class="register-title">
             <h3>Register</h3>
+            <!-- <app-loading *ngIf="loading"></app-loading> -->
         </div>
         <div class="register-form">
             <form [formGroup]="register" (ngSubmit)=registerUser()>
@@ -13,13 +14,13 @@
                     <span class="register-error"
                         *ngIf="register.get('user').hasError('minlength') && register.get('user').touched">The user must
                         have a minimum of 5 characters</span>
-                    <input class="input-form" type="email" placeholder="Email" formControlName="email">
+                    <!-- <input class="input-form" type="email" placeholder="Email" formControlName="email">
                     <span class="register-error"
                         *ngIf="register.get('email').hasError('required') && register.get('email').touched">Email is
                         required</span>
                     <span class="register-error"
                         *ngIf="register.get('email').hasError('email') && register.get('email').touched">Email is
-                        invalid</span>
+                        invalid</span> -->
                     <input class="input-form" type="password" placeholder="Password" formControlName="password">
                     <span class="register-error"
                         *ngIf="register.get('password').hasError('required') && register.get('password').touched">Password
@@ -31,13 +32,12 @@
                         have a minimum of 6 characters</span>
                     <input class="input-form" type="password" placeholder="Repeat the password"
                         formControlName="confirmPassword">
-
                     <span class="register-error"
                         *ngIf="register.hasError('notSame')  && register.get('confirmPassword').touched">The
                         passwords are not the same</span>
                 </div>
                 <div>
-                    <button class="button-form" routerLink="/welcome/login">Accept</button>
+                    <button class="button-form" type="submit">Accept</button>
                     <button class="button-form" routerLink="/welcome/login">Back</button>
                 </div>
             </form>
