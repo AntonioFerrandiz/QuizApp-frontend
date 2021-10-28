@@ -18,7 +18,7 @@ const routes: Routes = [
     ]
   },
   {path: 'dashboard', component:DashboardComponent, children:[
-    {path: 'questionnaire', component: QuestionnaireComponent},
+    {path: '', component: QuestionnaireComponent},
     {path: 'changepassword', component: ChangepasswordComponent}
   ]},
   { path: '**', redirectTo: '/welcome', pathMatch: 'full' }

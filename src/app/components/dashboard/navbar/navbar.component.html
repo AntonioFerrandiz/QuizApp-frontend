@@ -11,14 +11,14 @@
           <a class="nav-link" href="dashboard" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="questionnaire">Quiz</a>
+          <a class="nav-link" routerLink="dashboard">Quiz</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="changepassword">Change Password</a>
         </li>
       </ul>
       <div class="d-flex">
-        <button class="btn btn-outline-danger" type="submit" routerLink="welcome">Logout</button>
+        <button class="btn btn-outline-danger" type="submit" (click)="logOut()">Logout</button>
       </div>
     </div>
   </div>
