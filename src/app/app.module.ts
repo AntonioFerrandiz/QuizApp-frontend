@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// Intereceptos
+import { AddTokenInterceptor } from '../app/helpers/add-token.interceptor'
 //Modulos
 import { AppRoutingModule } from './app-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -17,7 +19,7 @@ import { ChangepasswordComponent } from './components/dashboard/changepassword/c
 import { QuestionnaireComponent } from './components/dashboard/questionnaire/questionnaire.component';
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { LoadingComponent } from './shared/loading/loading.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

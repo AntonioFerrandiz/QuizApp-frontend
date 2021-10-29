@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../../../models/user'
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(user).subscribe(data => {
       console.log(data);
       this.loading = false;
-      this.loginService.setLocalStorage(data.usuario);
+      this.loginService.setLocalStorage(data.token);
       this.router.navigate(['/dashboard'])
     }, error => {
       console.log(error);

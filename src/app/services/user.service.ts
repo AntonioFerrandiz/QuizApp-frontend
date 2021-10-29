@@ -19,5 +19,8 @@ export class UserService {
   saveUser(user: User): Observable<any>{
     return this.http.post(this.myAppUrl + this.myApiUrl, user);
   }
-  
+
+  changePassword(changePassword): Observable<any>{
+    return this.http.put(this.myAppUrl + this.myApiUrl + '/ChangePassword', changePassword);
+  }
 }
