@@ -1,0 +1,14 @@
+<div class="container">
+        <h2 class="text-center">Questionnaire Data</h2>
+        <form [formGroup]="dataQuestionnaire" (ngSubmit)="stepOne()">
+            <div class="form-group">
+                <input type="text" class="q-input" placeholder="Enter the questionnaire title" formControlName="title">
+                <span class="newQ-error" *ngIf="dataQuestionnaire.get('title').hasError('required') && dataQuestionnaire.get('title').touched">The title of Questionnaire is required</span>
+            </div>
+            <div class="form-group">
+                <textarea rows="3" class="q-input" placeholder="Enter the questionnaire description" formControlName="description"></textarea>
+                <span class="newQ-error" *ngIf="dataQuestionnaire.get('description').hasError('required') && dataQuestionnaire.get('description').touched">The description of Questionnaire is required</span>
+            </div>
+            <button [disabled]="dataQuestionnaire.invalid" class="button-form">Next</button>            
+        </form>
+</div>

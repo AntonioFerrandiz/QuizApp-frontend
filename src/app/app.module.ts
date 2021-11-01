@@ -20,6 +20,10 @@ import { QuestionnaireComponent } from './components/dashboard/questionnaire/que
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NewQuestionnaireComponent } from './components/dashboard/questionnaire/new-questionnaire/new-questionnaire.component';
+import { StepOneComponent } from './components/dashboard/questionnaire/new-questionnaire/step-one/step-one.component';
+import { StepTwoComponent } from './components/dashboard/questionnaire/new-questionnaire/step-two/step-two.component';
+import { NewQuestionComponent } from './components/dashboard/questionnaire/new-questionnaire/step-two/new-question/new-question.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     QuestionnaireComponent,
     NavbarComponent,
     LoadingComponent,
+    NewQuestionnaireComponent,
+    StepOneComponent,
+    StepTwoComponent,
+    NewQuestionComponent,
     
   ],
   imports: [

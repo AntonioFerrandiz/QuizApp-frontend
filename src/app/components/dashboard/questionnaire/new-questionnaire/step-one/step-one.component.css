@@ -1,0 +1,38 @@
+.newQ-error{
+    font-size: .8rem;
+    color: #FF4848;
+    text-align: start;
+}
+.q-input{
+    width: 100%;
+    background-color: #F0F0F0;
+    margin: .5rem 0 ;
+    padding: 1rem;
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid #8b8b8b;
+}
+.q-input:hover{
+    border-bottom: 2px solid #000;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+}
+.q-input:focus{
+    border-bottom: 2px solid #5C7AEA;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+}
+.inputs{
+    text-align: start;
+}
+.button-form{
+    padding: .5rem 2rem .5rem 2rem;
+    border-radius: .5rem;
+    border: none;
+    color: white;
+    background-color: #707070;
+    margin: .5rem 0;
+}
+.button-form:hover{
+    background-color: #C8C6C6;
+    color: #707070;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) .5s;
+}
