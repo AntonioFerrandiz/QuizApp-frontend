@@ -4,7 +4,7 @@ export class Questionnaire{
     id?: number;
     name: string;
     description: string;
-    dateCreated: Date;
+    dateCreated?: Date;
     questionsList: Question[];
 
     constructor(name: string, description: string, dateCreated: Date, questionList: Question[]){

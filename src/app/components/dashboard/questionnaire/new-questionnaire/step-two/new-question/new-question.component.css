@@ -1,0 +1,19 @@
+.form-group{
+    margin: 1rem 0;
+}
+.delete-icon{
+    font-size: 2.25rem;
+    cursor: pointer;
+    color: #ce4b4b;
+    margin-top: 2px;
+}
+.add-icon{
+    font-size: 2.25rem;
+    cursor: pointer;
+    float: right;
+}
+.text-error{
+    font-size: .8rem;
+    color: #FF4848;
+    text-align: start;
+}

@@ -8,5 +8,6 @@ export class Question{
     constructor(description: string, answerList: Answer[]){
         this.description = description;
         this.answerList = answerList;
+        this.hide = true;
     }
 }

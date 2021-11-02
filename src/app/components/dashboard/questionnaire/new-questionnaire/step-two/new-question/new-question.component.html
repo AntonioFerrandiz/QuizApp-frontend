@@ -1,1 +1,18 @@
-<p>new-question works!</p>
+<form [formGroup]="newQuestion">
+    <div class="form-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Enter a question" formControlName="question"> 
+        <span class="text-error" *ngIf="newQuestion.get('question').hasError('required') && newQuestion.get('question').touched">The question is required</span>
+    </div>
+    <div formArrayName="answers" *ngFor="let item of getAnswers.controls; let i = index">
+            <div class="input-group pt-2" [formGroupName]="i">
+                <input type="text" class="form-control" placeholder="Answer {{ i + 1 }}" formControlName="description">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="radio" (change)="setValidAnswer(i)" [value]="1" name="isCorrect" formControlName="isCorrect">
+                </div>
+                <span class="material-icons delete-icon" (click) = "deleteAnswer(i)">delete</span>
+            </div>
+            <span class="text-error" *ngIf="item.get('description').hasError('required') && item.get('description').touched">The answer is required</span>
+    </div>
+    <span class="material-icons add-icon"(click)="addAnswer()">add</span><br><br>
+    <button class="btn btn-primary float-end" [disabled] = "newQuestion.invalid" (click) = "addQuestion()">Add</button>
+</form>

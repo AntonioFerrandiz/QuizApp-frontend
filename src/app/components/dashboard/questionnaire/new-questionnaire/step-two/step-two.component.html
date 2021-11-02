@@ -1,2 +1,35 @@
-<h1>{{titleQuestionnaire}}</h1>
-<h1>{{descriptionQuestionnaire}}</h1>
+<div class="row">
+    <div class="col-lg-6">
+        <h3 class="text-center">Quiz list</h3>
+        <hr>
+        <div class="card mb-2" *ngFor="let question of listQuestions; let i = index">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div style="width: 70%;">
+                    <h5>{{ question.description }}</h5>
+                </div>
+                <div style="width: 30%;">
+                    <button class="btn btn-primary btn-sm margin" (click) = "question.hide = !question.hide">Show</button>
+                    <button class="btn btn-danger btn-sm margin" (click)="deleteQuestion(i)">Delete</button>
+                </div>
+            </div>
+            <div class="card-body" [hidden]="question.hide">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let answer of question.answerList"
+                        [ngClass] = "{ 'list-group-item-success': answer.isCorrect == true}">
+                        {{ answer.description }}
+                        <span class="material-icons" *ngIf="answer.isCorrect">check_circle</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="listQuestions.length == 0">
+            <span>No questions to display</span>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <h3 class="text-center">New Question</h3>
+        <hr>
+        <app-new-question (sendQuestion)="saveQuestion($event)"></app-new-question>
+    </div>
+</div>
+<button class="btn btn-success btn-lg btnFinish" [disabled]="listQuestions.length == 0" (click)="saveQuestionnaire()">Finish questionnaire</button>
