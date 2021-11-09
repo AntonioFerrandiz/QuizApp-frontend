@@ -51,7 +51,7 @@ export class NewQuestionComponent implements OnInit {
   }
   setValidAnswer(index: number): void {
     this.correctAnswer = index;
-    console.log(this.correctAnswer);
+    //console.log(this.correctAnswer);
   }
   addQuestion(): void {
     const descriptionQuestion = this.newQuestion.get('question').value;
@@ -60,10 +60,10 @@ export class NewQuestionComponent implements OnInit {
 
     const ansArray: Answer[] = [];
 
-    answersArray.forEach((element, i) => {
+    answersArray.forEach((element, index) => {
       const answer: Answer = new Answer(element.description, false);
       //console.log(element.isCorrect + ' => ' + i)
-      if (element.isCorrect === 1) {
+      if (index === this.correctAnswer) {
         answer.isCorrect = true;
       }
       ansArray.push(answer);
@@ -75,6 +75,7 @@ export class NewQuestionComponent implements OnInit {
     this.reset();
   }
   reset(): void {
+    this.correctAnswer = 0;
     this.newQuestion.reset();
     this.getAnswers.clear();
     this.addQuestionDefault();
