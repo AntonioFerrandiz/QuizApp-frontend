@@ -2,6 +2,23 @@
     <div class="home-card">
         <h2 class="home-title">Bienvenid@ {{ userName }}</h2>
         <h3 class="home-text">Cuestionarios</h3>
-        <button class="home-button" routerLink="/dashboard/newQuestionnaire/stepOne" routerLinkActive="router-link-active" >Nuevo Cuestionario</button>
+        <button class="home-button" routerLink="/dashboard/newQuestionnaire/stepOne"
+            routerLinkActive="router-link-active">Nuevo Cuestionario</button>
     </div>
 </div>
+<div class="text-center">
+    <app-loading *ngIf="loading"></app-loading>
+</div>
+<div class="row">
+    <div class="col-sm-4 mt-3"*ngFor="let questionnaire of questionnaireList">
+        <div class="card bg-light" >
+            <div class="card-body text-center">
+                <h4 class="card-title">{{ questionnaire.name }}</h4>
+                <p class="card-text">{{ questionnaire.description }}</p>
+                <button class="btn btn-success radius">Show</button>
+                <button class="btn btn-danger radius" (click)="deleteQuestionnaire(questionnaire.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<span *ngIf="questionnaireList.length == 0 && loading == false">No hay cuestionarios para mostrar</span>

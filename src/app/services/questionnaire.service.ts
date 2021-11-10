@@ -21,4 +21,11 @@ export class QuestionnaireService {
   saveQuestionnaire(questionnaire: Questionnaire): Observable<any>{
     return this.http.post(this.myAppUrl + this.myApiUrl, questionnaire);
   }
+
+  getQuestionnaireList(): Observable<any>{
+    return this.http.get(this.myAppUrl + this.myApiUrl + '/GetListQuestionnaireByUser');
+  }
+  deleteQuestionnaire(questionnaireID: number): Observable<any>{
+    return this.http.delete(this.myAppUrl + this.myApiUrl + '/' + questionnaireID);
+  }
 }

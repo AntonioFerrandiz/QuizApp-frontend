@@ -24,6 +24,9 @@ import { NewQuestionnaireComponent } from './components/dashboard/questionnaire/
 import { StepOneComponent } from './components/dashboard/questionnaire/new-questionnaire/step-one/step-one.component';
 import { StepTwoComponent } from './components/dashboard/questionnaire/new-questionnaire/step-two/step-two.component';
 import { NewQuestionComponent } from './components/dashboard/questionnaire/new-questionnaire/step-two/new-question/new-question.component';
+import { EnterNameComponent } from './components/inicio/questionnaires-list/enter-name/enter-name.component';
+import { QuestionComponent } from './components/inicio/questionnaires-list/question/question.component';
+import { AnswerQuestionComponent } from './components/inicio/questionnaires-list/answer-question/answer-question.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { NewQuestionComponent } from './components/dashboard/questionnaire/new-q
     StepOneComponent,
     StepTwoComponent,
     NewQuestionComponent,
+    EnterNameComponent,
+    QuestionComponent,
+    AnswerQuestionComponent,
     
   ],
   imports: [
