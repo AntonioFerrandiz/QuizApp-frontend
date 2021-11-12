@@ -28,4 +28,7 @@ export class QuestionnaireService {
   deleteQuestionnaire(questionnaireID: number): Observable<any>{
     return this.http.delete(this.myAppUrl + this.myApiUrl + '/' + questionnaireID);
   }
+  getQuestionnaire(questionnaireID: number): Observable<any>{
+    return this.http.get(this.myAppUrl + this.myApiUrl + '/' + questionnaireID)
+  }
 }

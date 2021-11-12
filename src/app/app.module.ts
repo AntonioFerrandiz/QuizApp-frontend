@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 // Intereceptos
 import { AddTokenInterceptor } from '../app/helpers/add-token.interceptor'
 //Modulos
@@ -27,6 +27,7 @@ import { NewQuestionComponent } from './components/dashboard/questionnaire/new-q
 import { EnterNameComponent } from './components/inicio/questionnaires-list/enter-name/enter-name.component';
 import { QuestionComponent } from './components/inicio/questionnaires-list/question/question.component';
 import { AnswerQuestionComponent } from './components/inicio/questionnaires-list/answer-question/answer-question.component';
+import { QuestionnaireeComponent } from './components/dashboard/questionnaire/questionnairee/questionnairee.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +48,10 @@ import { AnswerQuestionComponent } from './components/inicio/questionnaires-list
     EnterNameComponent,
     QuestionComponent,
     AnswerQuestionComponent,
-    
+    QuestionnaireeComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

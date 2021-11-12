@@ -15,7 +15,7 @@
             <div class="card-body text-center">
                 <h4 class="card-title">{{ questionnaire.name }}</h4>
                 <p class="card-text">{{ questionnaire.description }}</p>
-                <button class="btn btn-success radius">Show</button>
+                <button class="btn btn-success radius" routerLink="/dashboard/viewQuestionnaire/{{ questionnaire.id }}" routerLinkActive="router-link-active" >Show</button>
                 <button class="btn btn-danger radius" (click)="deleteQuestionnaire(questionnaire.id)">Delete</button>
             </div>
         </div>
