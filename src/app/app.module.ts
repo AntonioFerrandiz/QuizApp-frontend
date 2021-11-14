@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AddTokenInterceptor } from '../app/helpers/add-token.interceptor'
 //Modulos
 import { AppRoutingModule } from './app-routing.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 //Componentes
@@ -62,6 +62,7 @@ import { QuestionnairesListComponent } from './components/inicio/questionnaires-
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
+    FormsModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },  ],
   bootstrap: [AppComponent]

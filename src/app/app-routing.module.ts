@@ -10,7 +10,9 @@ import { QuestionnaireComponent } from './components/dashboard/questionnaire/que
 import { QuestionnaireeComponent } from './components/dashboard/questionnaire/questionnairee/questionnairee.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/inicio/login/login.component';
+import { AnswerQuestionComponent } from './components/inicio/questionnaires-list/answer-question/answer-question.component';
 import { EnterNameComponent } from './components/inicio/questionnaires-list/enter-name/enter-name.component';
+import { QuestionComponent } from './components/inicio/questionnaires-list/question/question.component';
 import { QuestionnairesListComponent } from './components/inicio/questionnaires-list/questionnaires-list.component';
 import { RegisterComponent } from './components/inicio/register/register.component';
 import { WelcomeComponent } from './components/inicio/welcome/welcome.component';
@@ -24,6 +26,8 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'questionnairesList', component: QuestionnairesListComponent },
       { path: 'insertName', component: EnterNameComponent },
+      { path: 'question', component: QuestionComponent },
+      { path: 'questionnaireAnswer', component: AnswerQuestionComponent},
     ]
   },
   {

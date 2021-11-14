@@ -1,1 +1,24 @@
-<p>answer-question works!</p>
+<div class="container">
+    <div class="card text-center">
+        <h4>Resultado</h4>
+        <p class="card-text">Este es el resultado del questionnairesList</p>
+        <div *ngFor="let question of questionnaire.questionsList; let i = index" class="mt-2">
+            <div class="card-header">
+                <b>{{ question.description }}</b>
+            </div>
+            <ul class="list-group" *ngFor="let answer of question.answerList">
+                <li class="list-group-item" [ngClass]="{'list-group-item-success': answer.isCorrect == true && userAnswer[i] == answer.id,
+                                                        'list-group-item-danger': answer.isCorrect == false && userAnswer[i] == answer.id}" >
+                    {{ answer.description }}
+                    <span class="material-icons correct" *ngIf="answer.isCorrect == true && userAnswer[i] == answer.id">check_circle</span>
+                    <span class="material-icons incorrect" *ngIf="answer.isCorrect == false && userAnswer[i] == answer.id">highlight_off</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+            <button class="btn btn-primary btn-lg btn-block" routerLink="/welcome">Back</button>
+        </div>
+    </div>
+</div>

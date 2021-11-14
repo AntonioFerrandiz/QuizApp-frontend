@@ -9,5 +9,6 @@ export class QuestionnaireAnswerService {
   questionnaireID: number;
   answers: number[] = [];
   questionnaire: Questionnaire;
+  
   constructor() { }
 }
