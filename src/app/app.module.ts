@@ -28,6 +28,7 @@ import { EnterNameComponent } from './components/inicio/questionnaires-list/ente
 import { QuestionComponent } from './components/inicio/questionnaires-list/question/question.component';
 import { AnswerQuestionComponent } from './components/inicio/questionnaires-list/answer-question/answer-question.component';
 import { QuestionnaireeComponent } from './components/dashboard/questionnaire/questionnairee/questionnairee.component';
+import { QuestionnairesListComponent } from './components/inicio/questionnaires-list/questionnaires-list.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,9 @@ import { QuestionnaireeComponent } from './components/dashboard/questionnaire/qu
     QuestionComponent,
     AnswerQuestionComponent,
     QuestionnaireeComponent,
+    QuestionnairesListComponent,
+    EnterNameComponent,
+    AnswerQuestionComponent,
   ],
   imports: [
     CommonModule,

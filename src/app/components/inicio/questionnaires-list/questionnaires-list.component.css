@@ -1,0 +1,19 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    width: 100%;
+}
+.card{
+    width: 100%;
+    padding: .5rem;
+}
+.btn-ing{
+    margin-top: .5rem;
+    background-color: #f05f44;
+    color: white;
+    border-color: #f05f44;
+}
