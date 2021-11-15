@@ -5,9 +5,15 @@ import { CommonModule } from '@angular/common';
 import { AddTokenInterceptor } from '../app/helpers/add-token.interceptor'
 //Modulos
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MatButtonModule } from '@angular/material/button'
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material/input';
+
 //Componentes
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -29,6 +35,7 @@ import { QuestionComponent } from './components/inicio/questionnaires-list/quest
 import { AnswerQuestionComponent } from './components/inicio/questionnaires-list/answer-question/answer-question.component';
 import { QuestionnaireeComponent } from './components/dashboard/questionnaire/questionnairee/questionnairee.component';
 import { QuestionnairesListComponent } from './components/inicio/questionnaires-list/questionnaires-list.component';
+
 
 @NgModule({
   declarations: [
@@ -63,8 +70,9 @@ import { QuestionnairesListComponent } from './components/inicio/questionnaires-
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
     FormsModule,
+    MatButtonModule, MatCardModule, MatDividerModule, MatProgressSpinnerModule, MatInputModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },  ],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

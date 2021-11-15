@@ -1,11 +1,30 @@
 <div class="container">
-    <div class="card text-center">
+    <!-- <div class="card text-center">
         <div class="col-lg-6 offset-lg-3">
             <input type="text" class="form-control form-control-lg" placeholder="Insert your name:" [(ngModel)]="playerName">
         </div>
         <div class="mt-auto">
             <button class="btn btn-primary btn-lg" routerLink = "/welcome/questionnairesList">Back</button>
             <button class="btn btn-primary btn-lg btn-sig" (click) = "next()" [disabled] ="playerName == ''">Next</button>
+        </div>
+    </div> -->
+
+    <div style="width: 100%;">
+        <div class="div col-lg-6 offset-lg-3">
+            <mat-card>
+                <mat-card-content>
+                    <mat-form-field appearance="fill" style="width: 100%;">
+                        <mat-label>Your name</mat-label>
+                        <input type="text" autocomplete="off" matInput [(ngModel)]="playerName">
+                    </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions class="c">
+                    <button mat-flat-button class="button btn-back"
+                        routerLink="/welcome/questionnairesList">BACK</button>
+                    <button mat-flat-button class="button btn-next" (click)="next()"
+                        [disabled]="playerName == ''">NEXT</button>
+                </mat-card-actions>
+            </mat-card>
         </div>
     </div>
 </div>

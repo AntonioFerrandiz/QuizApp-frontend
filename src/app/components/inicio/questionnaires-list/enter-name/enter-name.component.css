@@ -14,10 +14,20 @@
     border-color: #f05f44;
     margin-left: .75rem;
 }
-
-input{
-    font-size: x-large;
+.c{
+    display: flex;
+    justify-content: center;
+    margin: 0 !important;
 }
-input::placeholder{
-    text-align: center;
+.button{
+    margin: 0 .5rem !important;
+    background-color: #94B3FD;
+    color: #FFF;
+    padding: 0 2rem;
+}
+.btn-back{
+    background-color: #94B3FD;
+}
+.btn-next{
+    background-color: #5C7AEA;
 }

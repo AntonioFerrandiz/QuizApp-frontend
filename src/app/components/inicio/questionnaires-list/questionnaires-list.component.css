@@ -6,14 +6,26 @@
 }
 .row{
     width: 100%;
+    margin: 0;
 }
-.card{
-    width: 100%;
-    padding: .5rem;
+.card-content{
+    margin: .25rem 0;
+}
+.greeting{
+    font-size: 2.5rem;
+    color: #F7F6F2 !important;
 }
 .btn-ing{
-    margin-top: .5rem;
-    background-color: #f05f44;
-    color: white;
-    border-color: #f05f44;
+    background-color: #5C7AEA;
+    color: #FFF;
+    padding: 0 1.75rem;
+}
+.txt{
+    word-break: break-all;
+}
+.btn-back{
+    float: right;
+    background-color: #94B3FD;
+    color: #FFF;
+    padding: 0 2rem;
 }

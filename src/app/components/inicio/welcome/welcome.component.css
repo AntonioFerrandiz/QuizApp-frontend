@@ -8,19 +8,25 @@
 .title-app{
     font-family: 'Fredoka One';
     font-size: 8rem;
-    color: #707070;
+    color: #3D56B2;
+    line-height: .80;
 }
 .button{
     width: 8rem;
-    padding: 0.75rem;
+    padding: 0.25rem .25rem;
     border: none;
-    border-radius: 1rem;
-    background-color: #E0E0E0;
-    color: #3B3B3B;
-    margin: 0 .75rem 0 .75rem;
+    border-radius: .5rem;
+    margin: 1.25rem 1rem ;
 }
-.button:hover{
+
+.btn-qst{
+    background-color: #5C7AEA;
+}
+.btn-log{
+    background-color: #94B3FD;
+}
+/* .button:hover{
     background-color: #707070;
     color: white;
     transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.25s;
-}
+} */
