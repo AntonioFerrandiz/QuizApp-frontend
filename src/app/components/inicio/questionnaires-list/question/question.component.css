@@ -16,3 +16,24 @@
 .list-group-item{
     cursor: pointer;
 }
+.button{
+    margin: 0 .5rem !important;
+    background-color: #94B3FD;
+    color: #FFF;
+    padding: 0 2rem;
+}
+.btn-next{
+    background-color: #5C7AEA;
+}
+
+mat-card{
+    width: 100% !important;
+}
+.mat-list-option[aria-selected="true"] {
+    background: #94B3FD;
+    color: #FFF;
+}
+.mat-list-option[aria-selected="false"] {
+    background: none;
+    color: #00000e;
+}

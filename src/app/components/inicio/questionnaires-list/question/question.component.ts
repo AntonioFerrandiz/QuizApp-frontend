@@ -55,16 +55,20 @@ export class QuestionComponent implements OnInit {
   }
   AddClassOption(answer: any): any {
     if (answer === this.selectedOption) {
-      this.style = 'active text-light'
+      this.style = '.mat-list-option[aria-selected="true"]'
       return this.style;
     }
   }
-  next(): void{
+  AddClassNextOption(): any {
+    this.style = '.mat-list-option[aria-selected="false"]'
+    return this.style;
+  }
+  next(): void {
     this.answerQuestionnaireService.answers.push(this.selectedOptionID);
     this.answerConfirm = false;
     this.index++;
     this.selectedOptionID = null;
-    if(this.index === this.questionsList.length){
+    if (this.index === this.questionsList.length) {
       this.router.navigate(['welcome/questionnaireAnswer']);
     }
   }

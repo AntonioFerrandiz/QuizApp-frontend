@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
 }
-.card{
+mat-card{
     width: 100%;
     padding: 1rem 0;
 }
@@ -22,4 +22,24 @@
 }
 .list-group{
     padding: 0 1rem;
+}
+.question-name{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: .75rem 0 ;
+}
+
+.button{
+    background-color: #94B3FD;
+    color: #FFF;
+    padding: 0 2rem;
+}
+.btn-back{
+    background-color: #94B3FD;
+    color: #FFF;
+    
+}
+mat-card-actions{
+    display: flex !important;
+    justify-content: center !important;
 }
