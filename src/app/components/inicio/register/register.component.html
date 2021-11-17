@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="register-card">
+    <!-- <div class="register-card">
         <div class="register-title">
             <h3>Register</h3>
-            <!-- <app-loading *ngIf="loading"></app-loading> -->
+            <app-loading *ngIf="loading"></app-loading>
         </div>
         <div class="register-form">
             <form [formGroup]="register" (ngSubmit)=registerUser()>
@@ -14,13 +14,6 @@
                     <span class="register-error"
                         *ngIf="register.get('user').hasError('minlength') && register.get('user').touched">The user must
                         have a minimum of 5 characters</span>
-                    <!-- <input class="input-form" type="email" placeholder="Email" formControlName="email">
-                    <span class="register-error"
-                        *ngIf="register.get('email').hasError('required') && register.get('email').touched">Email is
-                        required</span>
-                    <span class="register-error"
-                        *ngIf="register.get('email').hasError('email') && register.get('email').touched">Email is
-                        invalid</span> -->
                     <input class="input-form" type="password" placeholder="Password" formControlName="password">
                     <span class="register-error"
                         *ngIf="register.get('password').hasError('required') && register.get('password').touched">Password
@@ -42,5 +35,61 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
+    <mat-card class="register-card">
+        <mat-card-title>Register</mat-card-title>
+        <app-loading *ngIf="loading"></app-loading>
+        <mat-card-content>
+            <mat-divider></mat-divider>
+            <form [formGroup]="register" (ngSubmit)=registerUser()>
+                <mat-form-field appearance="fill" class="mt-3 input-form">
+                    <mat-label>Username</mat-label>
+                    <input matInput autocomplete="false" type="text" formControlName="user">
+                    <mat-error class="register-error"
+                        *ngIf="register.get('user').hasError('required') && register.get('user').touched">User is
+                        required</mat-error>
+                    <mat-error class="register-error"
+                        *ngIf="register.get('user').hasError('minlength') && register.get('user').touched">The
+                        user must
+                        have a minimum of 5 characters</mat-error>
+
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill" class="mt-1 input-form">
+                    <mat-label>Enter your password</mat-label>
+                    <input type="password" matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-error class="register-error"
+                        *ngIf="register.get('password').hasError('required') && register.get('password').touched">
+                        Password is
+                        required</mat-error>
+                    <mat-error class="register-error"
+                        *ngIf="register.get('password').hasError('minlength') && register.get('password').touched">The
+                        password must
+                        have a minimum of 6 characters</mat-error>
+                    <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button> -->
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="mt-1 input-form">
+                    <mat-label>Confirm your password</mat-label>
+                    <input type="password" matInput [type]="hideC ? 'password' : 'text'"
+                    formControlName="confirmPassword">
+                    <mat-error class="register-error"
+                        *ngIf="register.hasError('notSame')  && register.get('confirmPassword').touched">The
+                        passwords are not the same</mat-error>
+                    <!-- <button mat-icon-button matSuffix (click)="hideC = !hideC" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hideC">
+                        <mat-icon>{{hideC ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button> -->
+                </mat-form-field>
+
+                <mat-card-actions>
+                    <button mat-flat-button class="button btn-accept" type="submit">Accept</button>
+                    <button mat-flat-button class="button btn-back" routerLink="/welcome/login">Back</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>

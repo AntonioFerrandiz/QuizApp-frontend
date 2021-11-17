@@ -12,6 +12,8 @@ import { User } from '../../../models/user'
 export class RegisterComponent implements OnInit {
   register: FormGroup;
   loading = false;
+  hide = true;
+  hideC = true
   constructor(private fb: FormBuilder,
               private userService: UserService,
               private router: Router,

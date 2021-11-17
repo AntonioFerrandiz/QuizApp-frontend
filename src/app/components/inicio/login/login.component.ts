@@ -11,6 +11,8 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  hide = true;
+  hideC = true;
   loading = false;
   login: FormGroup;
   constructor(private fb: FormBuilder,
