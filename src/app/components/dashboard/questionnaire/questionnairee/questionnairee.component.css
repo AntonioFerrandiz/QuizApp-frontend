@@ -2,3 +2,12 @@
     float: right;
     color: #34BE82;
 }
+.button{
+    width: 6rem;
+    padding: .25rem;
+    margin: 0 .75rem;
+    color: white;
+}
+.btn-back{
+    background-color: #5C7AEA;
+}

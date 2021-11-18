@@ -1,40 +1,61 @@
+
 .container-home{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 50vh;
+    
 }
 .home-card{
-    background-color: #F7F6F2;
+    
+    /* background-color: #B5DEFF; */
     text-align: center;
-    width: 30rem;
-    padding: 1.5rem;
+    width: 40rem;
+    padding: 2rem;
     border-radius: .3rem;
-    box-shadow: 11px 10px 27px -10px rgba(0,0,0,1);
 
 }
 .home-title{
-    font-size: 3rem;
-    color: #707070;
+    color: #2940D3;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+.home-user{
+    font-size: 1.5rem;
 }
 .home-text{
-    font-size: 1.5rem;
-    color: #707070;
+    font-size: 1rem;
     font-weight: 200;
 }
 .home-button{
-    outline: none;
+    width: 9rem;
+    padding: .25rem .25rem;
     border: none;
-    background-color: #707070;
-    color: #FFF;
     border-radius: .5rem;
-    padding: .5rem;
-    margin: 1rem 0;
+    margin: 0 .5rem ;
+    color: white;
+    background-color: #5C7AEA;
 }
-.home-button:hover{
-    color: #707070;
-    background-color: #FFF;
-    transition: all 0.3s;
+.card-questionnaireList{
+    word-break: break-all;
+    padding: 2rem;
+    
+}
+.text-q{
+    font-size: 2rem;
+}
+.button{
+    width: 6rem;
+    padding: .25rem;
+    margin: 0 .75rem;
+    color: white;
+    border-radius: 10rem;
+}
+.btn-delete{
+    background-color: #EF4F4F;
+}
+.btn-show{
+    background-color: #5AA469;
 }
 .radius{
     width: 6.5rem;
