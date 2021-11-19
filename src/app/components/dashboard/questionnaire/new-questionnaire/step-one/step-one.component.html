@@ -1,5 +1,5 @@
 <div class="container">
-        <h2 class="text-center">Questionnaire Data</h2>
+    <!-- <h2 class="text-center">Questionnaire Data</h2>
         <form [formGroup]="dataQuestionnaire" (ngSubmit)="stepOne()">
             <div class="form-group">
                 <input type="text" class="q-input" placeholder="Enter the questionnaire title" formControlName="title">
@@ -10,5 +10,38 @@
                 <span class="newQ-error" *ngIf="dataQuestionnaire.get('description').hasError('required') && dataQuestionnaire.get('description').touched">The description of Questionnaire is required</span>
             </div>
             <button [disabled]="dataQuestionnaire.invalid" class="button-form">Next</button>            
-        </form>
+        </form> -->
+    <h2 class="text-center">Questionnaire Data</h2>
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="dataQuestionnaire" (ngSubmit)="stepOne()">
+
+                <mat-form-field appearance="fill" class="mt-3" style="width: 100%;">
+                    <mat-label>Enter the questionnaire title</mat-label>
+                    <input matInput autocomplete="false" type="text" formControlName="title">
+                    <mat-error
+                        *ngIf="dataQuestionnaire.get('title').hasError('required') && dataQuestionnaire.get('title').touched">
+                        The title of Questionnaire is required</mat-error>
+                    <mat-error
+                        *ngIf="dataQuestionnaire.get('title').hasError('minlength') && dataQuestionnaire.get('title').touched">
+                        The title must have a minimum of 50 characters</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="mt-3" style="width: 100%;">
+                    <mat-label>Enter the questionnaire description</mat-label>
+                    <textarea matInput autocomplete="false" type="text" formControlName="description"
+                        style="height: 4rem;"></textarea>
+                    <mat-error
+                        *ngIf="dataQuestionnaire.get('description').hasError('required') && dataQuestionnaire.get('description').touched">
+                        The description of Questionnaire is required</mat-error>
+                    <mat-error
+                        *ngIf="dataQuestionnaire.get('description').hasError('minlength') && dataQuestionnaire.get('description').touched">
+                        The title must have a minimum of 100 characters</mat-error>
+                </mat-form-field>
+                <mat-card-actions>
+                    <button mat-flat-button class="button btn-accept" [disabled]="dataQuestionnaire.invalid">Next</button> 
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>
