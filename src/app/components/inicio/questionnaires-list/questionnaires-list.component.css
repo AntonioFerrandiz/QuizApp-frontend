@@ -21,7 +21,7 @@
     padding: 0 1.75rem;
 }
 .txt{
-    word-break: break-all;
+    word-break: break-word;
 }
 .btn-back{
     float: right;
