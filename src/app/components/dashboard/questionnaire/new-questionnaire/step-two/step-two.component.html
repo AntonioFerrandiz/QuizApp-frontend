@@ -1,6 +1,39 @@
 <div class="row">
-    <div class="col-lg-6">
-        <h3 class="text-center">Quiz list</h3>
+    <div class="col-lg-6 mb-3">
+        <h2 class="text-center">Quiz List</h2>
+        <mat-divider class="mb-4"></mat-divider>
+        <mat-card *ngIf="listQuestions.length != 0" class="mat-quiz-card">
+            <div *ngFor="let question of listQuestions; let i = index;">
+                <mat-card-content class="quiz-list">
+                    <mat-card class="card-content">
+                        <div class="justify-content-between align-items-center" style="display:flex">
+                            <div style="width: 50%;">
+                                <span style="margin-left: 1rem;">{{ question.description }}</span>
+                            </div>
+                            <div>
+                                <button mat-flat-button (click)="question.hide = !question.hide"
+                                    class="button btn-show">Show</button>
+                                <button mat-flat-button (click)="deleteQuestion(i)"
+                                    class="button btn-delete">Delete</button>
+                            </div>
+                        </div>
+                        <div [hidden]="question.hide" class="mt-3 mb-3">
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let answer of question.answerList"
+                                    [ngClass]="{ 'list-group-item-success': answer.isCorrect == true}">
+                                    {{ answer.description }}
+                                    <span class="material-icons icon-color" *ngIf="answer.isCorrect">check_circle</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </mat-card>
+                </mat-card-content>
+            </div>
+        </mat-card>
+        <div *ngIf="listQuestions.length == 0">
+            <span>No questions to display</span>
+        </div>
+        <!-- <h3 class="text-center">Quiz list</h3>
         <hr>
         <div class="card mb-2" *ngFor="let question of listQuestions; let i = index">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -24,12 +57,14 @@
         </div>
         <div *ngIf="listQuestions.length == 0">
             <span>No questions to display</span>
-        </div>
+        </div> -->
     </div>
-    <div class="col-lg-6">
-        <h3 class="text-center">New Question</h3>
-        <hr>
+    <div class="col-lg-6 mb-3">
+        <h2 class="text-center">New Question</h2>
+        <mat-divider class="mb-4"></mat-divider>
         <app-new-question (sendQuestion)="saveQuestion($event)"></app-new-question>
+        <button mat-flat-button class="buttonF btn-finish" [disabled]="listQuestions.length == 0"
+            (click)="saveQuestionnaire()">Finish questionnaire</button>
     </div>
+
 </div>
-<button class="btn btn-success btn-lg btnFinish" [disabled]="listQuestions.length == 0" (click)="saveQuestionnaire()">Finish questionnaire</button>

@@ -1,16 +1,47 @@
-.btnFinish{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: .5rem;
-}
-.margin{
-    margin: .25rem .5rem;
+
+.mat-quiz-card{
+    background-color: #F7F6F2;
 }
 .material-icons{
     float: right;
 }
-.list-group-item{
-    padding: .20rem;
-    padding-left: 1.20rem;
+.quiz-list{
+    padding: .5rem;
+    margin-bottom: 0;
+}
+.icon-color{
+    color: #6ECB63;
+}
+.button{
+    width: 2.75rem;
+    padding: .20rem .25rem;
+    border: none;
+    border-radius: .5rem;
+    margin: 0 .15rem ;
+    color: white;
+}
+.buttonF{
+    width: 10rem;
+    padding: .20rem .25rem;
+    border: none;
+    border-radius: .5rem;
+    color: white;
+}
+.card-content{
+    margin: 0;
+    padding: .5rem;
+}
+.btn-show{
+    background-color: #77D970;
+}
+.btn-delete{
+    background-color: #EF4F4F;
+}
+.btn-finish{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 1.25rem;
+    margin-bottom: 1rem;
+    background-color: #94B3FD;
 }
