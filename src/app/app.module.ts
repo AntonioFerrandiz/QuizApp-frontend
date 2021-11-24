@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTableModule } from '@angular/material/table';
 //Componentes
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -38,6 +39,7 @@ import { QuestionComponent } from './components/inicio/questionnaires-list/quest
 import { AnswerQuestionComponent } from './components/inicio/questionnaires-list/answer-question/answer-question.component';
 import { QuestionnaireeComponent } from './components/dashboard/questionnaire/questionnairee/questionnairee.component';
 import { QuestionnairesListComponent } from './components/inicio/questionnaires-list/questionnaires-list.component';
+import { StatisticsComponent } from './components/dashboard/questionnaire/statistics/statistics.component';
 
 
 @NgModule({
@@ -63,6 +65,7 @@ import { QuestionnairesListComponent } from './components/inicio/questionnaires-
     QuestionnairesListComponent,
     EnterNameComponent,
     AnswerQuestionComponent,
+    StatisticsComponent,
   ],
   imports: [
     CommonModule,
@@ -73,7 +76,7 @@ import { QuestionnairesListComponent } from './components/inicio/questionnaires-
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
     FormsModule,
-    MatButtonModule, MatCardModule, MatDividerModule, MatProgressSpinnerModule, MatInputModule, MatListModule, MatFormFieldModule, MatIconModule, MatRadioModule
+    MatButtonModule, MatCardModule, MatDividerModule, MatProgressSpinnerModule, MatInputModule, MatListModule, MatFormFieldModule, MatIconModule, MatRadioModule, MatTableModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },],
   bootstrap: [AppComponent]

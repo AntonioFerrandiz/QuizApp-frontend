@@ -8,6 +8,7 @@ import { NewQuestionComponent } from './components/dashboard/questionnaire/new-q
 import { StepTwoComponent } from './components/dashboard/questionnaire/new-questionnaire/step-two/step-two.component';
 import { QuestionnaireComponent } from './components/dashboard/questionnaire/questionnaire.component';
 import { QuestionnaireeComponent } from './components/dashboard/questionnaire/questionnairee/questionnairee.component';
+import { StatisticsComponent } from './components/dashboard/questionnaire/statistics/statistics.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/inicio/login/login.component';
 import { AnswerQuestionComponent } from './components/inicio/questionnaires-list/answer-question/answer-question.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
       { path: '', component: QuestionnaireComponent },
       { path: 'changepassword', component: ChangepasswordComponent },
       { path: "viewQuestionnaire/:id", component: QuestionnaireeComponent },
+      { path: "statistics/:id", component: StatisticsComponent},
       {
         path: 'newQuestionnaire', component: NewQuestionnaireComponent, children: [
           { path: 'stepOne', component: StepOneComponent },

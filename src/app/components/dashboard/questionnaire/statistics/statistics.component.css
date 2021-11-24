@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  th.mat-header-cell {
+    text-align: left;
+    
+  }
+
+  .delete-icon{
+    color: #EF4F4F;
+    cursor: pointer;
+  }
+  .search-icon{
+    color: #94DAFF;
+    cursor: pointer;
+  }

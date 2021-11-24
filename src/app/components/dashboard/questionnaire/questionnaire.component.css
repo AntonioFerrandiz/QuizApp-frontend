@@ -58,6 +58,9 @@
 .btn-show{
     background-color: #77D970;
 }
+.btn-statistics{
+    background-color: #1597E5;
+}
 .radius{
     width: 6.5rem;
     border-radius: 10rem;

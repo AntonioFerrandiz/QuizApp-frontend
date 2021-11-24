@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Question } from 'src/app/models/question';
+import { QuestionnaireAnswer } from 'src/app/models/questionnaireAnswer';
+import { QuestionnaireAnswerDetails } from 'src/app/models/questionnaireAnswerDetail';
 import { QuestionnaireAnswerService } from 'src/app/services/questionnaire-answer.service';
 import { QuestionnaireService } from 'src/app/services/questionnaire.service';
 
@@ -18,6 +20,9 @@ export class QuestionComponent implements OnInit {
   style: string;
   index = 0;
   selectedOptionID: number;
+
+  listAnswerDetail: QuestionnaireAnswerDetails[] = [];
+
   constructor(private answerQuestionnaireService: QuestionnaireAnswerService,
     private questionnareService: QuestionnaireService,
     private router: Router) { }
@@ -65,11 +70,35 @@ export class QuestionComponent implements OnInit {
   }
   next(): void {
     this.answerQuestionnaireService.answers.push(this.selectedOptionID);
+
+    const answerDetail: QuestionnaireAnswerDetails = {
+      answerID: this.selectedOptionID
+    };
+    this.listAnswerDetail.push(answerDetail);
+
+    if (this.index === this.questionsList.length - 1) {
+      // this.router.navigate(['welcome/questionnaireAnswer']);
+      this.saveQuestionnaireAnswer();
+    }
     this.answerConfirm = false;
     this.index++;
     this.selectedOptionID = null;
-    if (this.index === this.questionsList.length) {
+  }
+
+  saveQuestionnaireAnswer(): void {
+    const questionnaireAnswer: QuestionnaireAnswer = {
+      questionnaireID: this.answerQuestionnaireService.questionnaireID,
+      playerName: this.answerQuestionnaireService.playerName,
+      listQuestionnaireAnswerDetail: this.listAnswerDetail
+    };
+    this.loading = true;
+    this.answerQuestionnaireService.saveQuestionnaireAnswer(questionnaireAnswer).subscribe(data => {
+      console.log('aaaaaa ',data);
+      this.loading = false;
       this.router.navigate(['welcome/questionnaireAnswer']);
-    }
+    }, error => {
+      this.loading = false;
+      console.log(error);
+    })
   }
 }
