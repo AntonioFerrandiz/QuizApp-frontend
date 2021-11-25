@@ -40,6 +40,7 @@ import { AnswerQuestionComponent } from './components/inicio/questionnaires-list
 import { QuestionnaireeComponent } from './components/dashboard/questionnaire/questionnairee/questionnairee.component';
 import { QuestionnairesListComponent } from './components/inicio/questionnaires-list/questionnaires-list.component';
 import { StatisticsComponent } from './components/dashboard/questionnaire/statistics/statistics.component';
+import { AnswerDetailComponent } from './components/dashboard/questionnaire/statistics/answer-detail/answer-detail.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { StatisticsComponent } from './components/dashboard/questionnaire/statis
     EnterNameComponent,
     AnswerQuestionComponent,
     StatisticsComponent,
+    AnswerDetailComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,26 @@
+<div class="text-center">
+    <app-loading *ngIf="loading"></app-loading>
+</div>
+<mat-card class="text-center mt-4" *ngIf="questionnaire != null">
+    <mat-card-title> {{ questionnaire.name | uppercase }}</mat-card-title>
+    <mat-card-subtitle>{{ questionnaire.description }}</mat-card-subtitle>
+    <mat-card-content class="mt-3" *ngFor="let question of questionnaire.questionsList; let i = index">
+        <mat-card>
+            <div>
+                <b>{{ i+1 }}) {{ question.description }}</b>
+            </div>
+            <ul class="list-group" *ngFor="let answer of question.answerList; ">
+                <li class="list-group-item" [ngClass] = "{ 'list-group-item-success': answer.isCorrect == true && answers[i]['answerId'] == answer.id,
+                                                            'list-group-item-danger': answer.isCorrect == false && answers[i]['answerId'] == answer.id }">
+                    {{ answer.description }}
+                    <span class="material-icons correct" *ngIf="answer.isCorrect == true && answers[i]['answerId'] == answer.id">check_circle</span>
+                    <span class="material-icons incorrect" *ngIf="answer.isCorrect == false && answers[i]['answerId'] == answer.id">highlight_off</span>
+                </li>
+
+            </ul>
+        </mat-card>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button class="button btn-back" routerLink="/dashboard/statistics/{{ questionnaire.id }}">Back</button>
+    </mat-card-actions>
+</mat-card>

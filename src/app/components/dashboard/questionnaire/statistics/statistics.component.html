@@ -23,7 +23,8 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef>Actions</th>
             <td mat-cell *matCellDef="let element">
-                <mat-icon aria-hidden="false" aria-label="Search icon" class="search-icon">search</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Search icon" class="search-icon"
+                routerLink ="/dashboard/answerDetail/{{ element['id'] }}">search</mat-icon>
                 <mat-icon aria-hidden="false" aria-label="Delete icon" class="delete-icon"
                 (click)="deleteQuestionnaireAnswer(element['id'])">delete</mat-icon>
             </td>
