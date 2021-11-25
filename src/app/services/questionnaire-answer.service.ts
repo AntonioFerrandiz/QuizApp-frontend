@@ -21,14 +21,17 @@ export class QuestionnaireAnswerService {
     this.myAppUrl = environment.endpoint;
     this.myApiUrl = '/api/QuestionnaireAnswer/'
   }
-  saveQuestionnaireAnswer(questionnaireAnswer: QuestionnaireAnswer): Observable<any>{
-    console.log('hola => ',questionnaireAnswer);
+  saveQuestionnaireAnswer(questionnaireAnswer: QuestionnaireAnswer): Observable<any> {
+    console.log('hola => ', questionnaireAnswer);
     return this.http.post(this.myAppUrl + this.myApiUrl, questionnaireAnswer)
   }
-  getListQuestionnaireAnswer(questionnaireID: number): Observable<any>{
+  getListQuestionnaireAnswer(questionnaireID: number): Observable<any> {
     return this.http.get(this.myAppUrl + this.myApiUrl + questionnaireID);
   }
-  deleteQuestionnanireAnswer(questionnaireAnswerID: number): Observable<any>{
+  deleteQuestionnanireAnswer(questionnaireAnswerID: number): Observable<any> {
     return this.http.delete(this.myAppUrl + this.myApiUrl + questionnaireAnswerID);
+  }
+  getQuestionnaireByAnswerId(answerID: number): Observable<any> {
+    return this.http.get(this.myAppUrl + this.myApiUrl + 'GetQuestionnaireByAnswerId/' + answerID)
   }
 }
