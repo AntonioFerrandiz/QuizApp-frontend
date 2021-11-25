@@ -18,6 +18,7 @@ import { QuestionComponent } from './components/inicio/questionnaires-list/quest
 import { QuestionnairesListComponent } from './components/inicio/questionnaires-list/questionnaires-list.component';
 import { RegisterComponent } from './components/inicio/register/register.component';
 import { WelcomeComponent } from './components/inicio/welcome/welcome.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -33,7 +34,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'dashboard', component: DashboardComponent, children: [
+    path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], children: [
       { path: '', component: QuestionnaireComponent },
       { path: 'changepassword', component: ChangepasswordComponent },
       { path: "viewQuestionnaire/:id", component: QuestionnaireeComponent },
