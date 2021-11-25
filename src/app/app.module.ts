@@ -48,8 +48,7 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
     SharedModule,
-    QuestionnairesListModule,
-    DashboardModule
+    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },],
   bootstrap: [AppComponent]

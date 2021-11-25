@@ -27,26 +27,18 @@ const routes: Routes = [
       { path: '', component: WelcomeComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'questionnairesList', component: QuestionnairesListComponent },
-      { path: 'insertName', component: EnterNameComponent },
-      { path: 'question', component: QuestionComponent },
-      { path: 'questionnaireAnswer', component: AnswerQuestionComponent },
+      {
+        path: 'questionnairesList', component: QuestionnairesListComponent,
+        loadChildren: () => import('./components/inicio/questionnaires-list/questionnaires-list.module')
+          .then(x => x.QuestionnairesListModule)
+      },
+
     ]
   },
   {
-    path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], children: [
-      { path: '', component: QuestionnaireComponent },
-      { path: 'changepassword', component: ChangepasswordComponent },
-      { path: "viewQuestionnaire/:id", component: QuestionnaireeComponent },
-      { path: "statistics/:id", component: StatisticsComponent },
-      { path: "answerDetail/:id", component: AnswerDetailComponent },
-      {
-        path: 'newQuestionnaire', component: NewQuestionnaireComponent, children: [
-          { path: 'stepOne', component: StepOneComponent },
-          { path: 'stepTwo', component: StepTwoComponent },
-        ]
-      }
-    ]
+    path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],
+    loadChildren: () => import('./components/dashboard/dashboard.module')
+      .then(x => x.DashboardModule)
   },
   { path: '**', redirectTo: '/welcome', pathMatch: 'full' }
 ];
