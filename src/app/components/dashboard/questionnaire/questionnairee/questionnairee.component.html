@@ -28,10 +28,10 @@
     <mat-divider></mat-divider>
     <mat-card-content class="mt-3" *ngFor="let question of questionnaire.questionsList; let i = index">
         <div class="mt-3 mb-3">
-            <b>{{ i+1 }}) {{ questionnaire.description }}</b>
+            <b>{{ i+1 }}) {{ question.description }}</b>
         </div>
         <ul class="list-group" *ngFor="let answer of question.answerList">
-            <li class="list-group-item" [ngClass]="{ 'list-group-item-success': answer.isCorrect }">
+            <li class="list-group-item text-center" [ngClass]="{ 'list-group-item-success': answer.isCorrect }">
                 {{ answer.description }}
                 <span class="material-icons" *ngIf="answer.isCorrect">check_circle</span>
             </li>

@@ -20,7 +20,7 @@ export class EnterNameComponent implements OnInit {
   }
   next(): void{
     this.answerQuestionnaire.playerName = this.playerName;
-    this.router.navigate(['/welcome/question']);
+    this.router.navigate(['/welcome/questionnairesList/question']);
   }
 
 }

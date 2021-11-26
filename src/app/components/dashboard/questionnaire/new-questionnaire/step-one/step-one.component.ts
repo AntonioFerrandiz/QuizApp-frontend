@@ -14,8 +14,8 @@ export class StepOneComponent implements OnInit {
     private router: Router,
     private questionnaireService: QuestionnaireService) {
       this.dataQuestionnaire = this.fb.group({
-        title: ['',[Validators.required, Validators.minLength(50)]],
-        description: ['', [Validators.required, Validators.minLength(100)]]
+        title: ['',[Validators.required]],
+        description: ['', [Validators.required]]
       })
      }
 

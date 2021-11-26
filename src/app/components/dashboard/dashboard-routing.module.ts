@@ -11,16 +11,15 @@ import { StatisticsComponent } from './questionnaire/statistics/statistics.compo
 
 const routes: Routes = [
   { path: '', component: QuestionnaireComponent },
-      { path: 'changepassword', component: ChangepasswordComponent },
-      { path: "viewQuestionnaire/:id", component: QuestionnaireeComponent },
-      { path: "statistics/:id", component: StatisticsComponent },
-      { path: "answerDetail/:id", component: AnswerDetailComponent },
-      {
-        path: 'newQuestionnaire', component: NewQuestionnaireComponent, children: [
-          { path: 'stepOne', component: StepOneComponent },
-          { path: 'stepTwo', component: StepTwoComponent },
-        ]
-      }
+  { path: 'changepassword', component: ChangepasswordComponent },
+  { path: "viewQuestionnaire/:id", component: QuestionnaireeComponent },
+  { path: "statistics/:id", component: StatisticsComponent },
+  { path: "answerDetail/:id", component: AnswerDetailComponent },
+  { path: 'newQuestionnaire', component: NewQuestionnaireComponent, children: [
+      { path: 'stepOne', component: StepOneComponent },
+      { path: 'stepTwo', component: StepTwoComponent },
+    ]
+  }
 ];
 
 @NgModule({

@@ -21,22 +21,17 @@ import { WelcomeComponent } from './components/inicio/welcome/welcome.component'
 import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-  {
-    path: 'welcome', component: InicioComponent, children: [
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: 'welcome', component: InicioComponent, children: [
       { path: '', component: WelcomeComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
-      {
-        path: 'questionnairesList', component: QuestionnairesListComponent,
-        loadChildren: () => import('./components/inicio/questionnaires-list/questionnaires-list.module')
-          .then(x => x.QuestionnairesListModule)
+      { path: 'questionnairesList', loadChildren: () => import('./components/inicio/questionnaires-list/questionnaires-list.module')
+                                                   .then(x => x.QuestionnairesListModule)
       },
 
-    ]
-  },
-  {
-    path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],
+    ]},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],
     loadChildren: () => import('./components/dashboard/dashboard.module')
       .then(x => x.DashboardModule)
   },

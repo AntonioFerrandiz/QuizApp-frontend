@@ -30,8 +30,9 @@ export class QuestionnairesListComponent implements OnInit {
     });
   }
   insertName(_questionnaireID: number): void{
+    console.log('a');
     this.questionnaireAnswer.questionnaireID = _questionnaireID;
-    this.router.navigate(['/welcome/insertName']);
+    this.router.navigate(['/welcome/questionnairesList/insertName']);
   }
 
 }

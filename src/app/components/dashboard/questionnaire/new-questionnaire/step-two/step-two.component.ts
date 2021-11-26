@@ -35,10 +35,11 @@ export class StepTwoComponent implements OnInit {
       description: this.descriptionQuestionnaire,
       questionsList: this.listQuestions
     };
-    this.questionnaireService.saveQuestionnaire(questionnaire).subscribe(data =>{
+    this.questionnaireService.saveQuestionnaire(questionnaire).subscribe(data => {
+      console.log('xd ',data)
       this.toastr.success('El cuuestionario fue registrado con éxito', 'Cuestionario registrado');
       this.router.navigate(['/dashboard']);
-    }, error =>{
+    }, error => {
       console.log(error);
       this.toastr.error('Opps... Ocurrió un error', 'Error');
       this.router.navigate(['/dashboard']);

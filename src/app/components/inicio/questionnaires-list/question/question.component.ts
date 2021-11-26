@@ -93,9 +93,9 @@ export class QuestionComponent implements OnInit {
     };
     this.loading = true;
     this.answerQuestionnaireService.saveQuestionnaireAnswer(questionnaireAnswer).subscribe(data => {
-      console.log('aaaaaa ',data);
+      // console.log('aaaaaa ',data);
       this.loading = false;
-      this.router.navigate(['welcome/questionnaireAnswer']);
+      this.router.navigate(['welcome/questionnairesList/questionnaireAnswer']);
     }, error => {
       this.loading = false;
       console.log(error);

@@ -22,7 +22,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NewQuestionnaireComponent,
     StepOneComponent,
     StepTwoComponent,
-    QuestionnaireComponent,
     StatisticsComponent,
     QuestionnaireeComponent,
     AnswerDetailComponent
